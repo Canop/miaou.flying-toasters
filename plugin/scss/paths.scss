@@ -1,0 +1,14 @@
+.ufo {
+	position: fixed;
+	z-index: 500;
+}
+
+@keyframes ufo-left-to-right-once {
+	from {
+		transform: translateX(-10vw) translateY(-300px) rotate(90deg) scale(.2);
+	}
+	to {
+		transform: translateX(130vw) translateY(-50px) rotate(90deg) scale(.2);
+	}
+}
+
