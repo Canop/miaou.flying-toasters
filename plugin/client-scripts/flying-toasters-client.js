@@ -18,18 +18,18 @@ miaou(function(gui, locals, plugins, ws){
 
 	plugins.ufo = {
 		start: function(){
+			if (gui.mobile) return;
 			ws.on('ufo.launch', function(ufo){
 				execute(ufo);
 			});
 		}
 	}
 
-
-	// execute({
-	// 	src: "https://dystroy.org/spacebullet/img/bullet.svg",
-	// 	css: {
-	// 		transformOrigin: "20px 360px",
-	// 		animation: "ufo-left-to-right-once 5s ease-in"
-	// 	}
-	// });
+	//execute({
+	//	src: "https://dystroy.org/flying-toasters/avion-rouge.png",
+	//	css: {
+	//		bottom: 0,
+	//		animation: "ufo-going-away-left 2s linear"
+	//	}
+	//});
 });

@@ -1,6 +1,7 @@
 .ufo {
 	position: fixed;
 	z-index: 500;
+	pointer-events: none;
 }
 
 @keyframes ufo-left-to-right-once {
@@ -11,4 +12,32 @@
 		transform: translateX(130vw) translateY(-50px) rotate(90deg) scale(.2);
 	}
 }
+
+@keyframes ufo-right-to-left-bottom {
+	from {
+		transform: translateX(120vw);
+	}
+	to {
+		transform: translateX(-30vw);
+	}
+}
+
+@keyframes ufo-left-to-right-bottom {
+	from {
+		transform: translateX(-50vw);
+	}
+	to {
+		transform: translateX(140vw);
+	}
+}
+
+@keyframes ufo-going-away-left {
+	from {
+		transform: scale(1.2) translateX(100vw) translateY(200px);
+	}
+	to {
+		transform: scale(.04) translateX(-40vw) translateY(-450px);
+	}
+}
+
 
