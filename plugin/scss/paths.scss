@@ -41,3 +41,13 @@
 }
 
 
+@keyframes ufo-catapulte {
+	from {
+		transform: translateX(0vw) translateY(200px) scale(1) rotate(0);
+	}
+	to {
+		transform: translateX(20vw) translateY(-120vh) scale(.02) rotate(500deg);
+	}
+}
+
+

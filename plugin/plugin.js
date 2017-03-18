@@ -52,6 +52,16 @@ register({
 	},
 	patterns: [/\bplane/i, /avions?\b/i, /airport/i]
 });
+register({
+	name: "vache",
+	src: "static/plugins/ufo/rsc/vache.png",
+	css: {
+		bottom: 0,
+		transformOrigin: "100% 100%",
+		animation: "ufo-catapulte 4s linear"
+	},
+	patterns: [/vache/i, /\bcows?\b/i]
+});
 
 exports.init = function(_miaou){
 	miaou = _miaou;

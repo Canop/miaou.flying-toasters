@@ -25,11 +25,12 @@ miaou(function(gui, locals, plugins, ws){
 		}
 	}
 
-	//execute({
-	//	src: "https://dystroy.org/flying-toasters/avion-rouge.png",
-	//	css: {
-	//		bottom: 0,
-	//		animation: "ufo-going-away-left 2s linear"
-	//	}
-	//});
+	// execute({
+	// 	src: "static/plugins/ufo/rsc/vache.png",
+	// 	css: {
+	// 		bottom: 0,
+	// 		transformOrigin: "100% 100%",
+	// 		animation: "ufo-catapulte 4s linear"
+	// 	}
+	// });
 });
