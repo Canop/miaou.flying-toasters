@@ -70,18 +70,22 @@ exports.init = function(_miaou){
 
 
 function launch(roomId, args, isServerAdmin){
-	var global = /\bglobal\b/.test(args);
-	if (global && !isServerAdmin) {
-		throw "Only a server admin can launch a global UFO";
-	}
-	var options = typeof args === "object" ? args : kfos.get(args.match(/[\w-]+$/)[0]);
-	if (!options) {
-		throw "Command not understood";
+	var	global = false,
+		ufo = args;
+	if (typeof ufo !== "object") {
+		global = /\bglobal\b/.test(args);
+		if (global && !isServerAdmin) {
+			throw "Only a server admin can launch a global UFO";
+		}
+		ufo = kfos.get(args.match(/[\w-]+$/)[0]);
+		if (!ufo) {
+			throw "Command not understood";
+		}
 	}
 	if (global) {
-		miaou.io.sockets.emit("ufo.launch", options);
+		miaou.io.sockets.emit("ufo.launch", ufo);
 	} else {
-		miaou.io.sockets.in(roomId).emit("ufo.launch", options);
+		miaou.io.sockets.in(roomId).emit("ufo.launch", ufo);
 	}
 }
 
@@ -120,7 +124,12 @@ exports.onReceiveMessage = function(shoe, m){
 	for (var i=0; i<patterns.length; i++) {
 		if (patterns[i].re.test(m.content)) {
 			var pat = patterns[i];
-			console.log("UFO FOUND", pat.re.toString());
+			console.log("ufo found", pat.re.toString());
+			var roomTags = shoe.room.tags;
+			if (roomTags.includes("serious") || roomTags.includes("no-flood")) {
+				console.log("ufo prevented because of room tag");
+				return;
+			}
 			var now = Date.now();
 			if (pat.lastTime > now - MINIMAL_DELAY) {
 				console.log("last time too recent");
