@@ -1,8 +1,10 @@
 miaou(function(gui, locals, plugins, ws){
 
+
 	function executeLoaded(ufo){
 		var $img = $(ufo.img).appendTo(document.body);
 		$img.addClass("ufo").css(ufo.css).on("animationend webkitAnimationEnd", function(){
+			console.log("remove");
 			$img.remove();
 		});
 	}
@@ -26,11 +28,11 @@ miaou(function(gui, locals, plugins, ws){
 	}
 
 	// execute({
-	// 	src: "static/plugins/ufo/rsc/vache.png",
+	// 	src: "static/plugins/ufo/rsc/carotte.png",
 	// 	css: {
 	// 		bottom: 0,
 	// 		transformOrigin: "100% 100%",
 	// 		animation: "ufo-catapulte 4s linear"
-	// 	}
+	// 	},
 	// });
 });

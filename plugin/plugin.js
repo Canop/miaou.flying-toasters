@@ -2,7 +2,7 @@
 var	miaou,
 	auths,
 	kfos = new Map, // known flying objects
-	MINIMAL_DELAY = 20*60*1000, // in ms
+	MINIMAL_DELAY = 2*60*60*1000, // in ms
 	patterns = [];
 
 function register(kfo){
@@ -62,7 +62,46 @@ register({
 	},
 	patterns: [/vache/i, /\bcows?\b/i]
 });
-
+register({
+	name: "petit-camion",
+	src: "static/plugins/ufo/rsc/petit-camion.png",
+	css: {
+		bottom: "-30px",
+		transformOrigin: "100% 100%",
+		animation: "ufo-right-to-left-bottom 2s linear"
+	},
+	patterns: [/petit camion/i]
+});
+register({
+	name: "camion",
+	src: "static/plugins/ufo/rsc/camion.png",
+	css: {
+		bottom: "-40px",
+		transformOrigin: "100% 100%",
+		animation: "ufo-left-to-right-bottom 3s linear"
+	},
+	patterns: [/camion\b/i, /truck/i]
+});
+register({
+	name: "toupie",
+	src: "static/plugins/ufo/rsc/bétonnière.png",
+	css: {
+		bottom: "-2px",
+		transformOrigin: "100% 100%",
+		animation: "ufo-left-to-right-bottom 5s linear"
+	},
+	patterns: [/bétonnière\b/i, /toupie/i]
+});
+register({
+	name: "carotte",
+	src: "static/plugins/ufo/rsc/carotte.png",
+	css: {
+		bottom: 0,
+		transformOrigin: "100% 100%",
+		animation: "ufo-catapulte 4s linear"
+	},
+	patterns: [/\bcar+ot/i]
+});
 exports.init = function(_miaou){
 	miaou = _miaou;
 	auths = miaou.lib("auths");
