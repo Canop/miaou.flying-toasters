@@ -63,6 +63,16 @@ register({
 	patterns: [/vache/i, /\bcows?\b/i]
 });
 register({
+	name: "cafe",
+	src: "static/plugins/ufo/rsc/cafe.png",
+	css: {
+		bottom: 0,
+		transformOrigin: "100% 100%",
+		animation: "ufo-catapulte 4s linear"
+	},
+	patterns: [/café/i, /\bcoffee?\b/i]
+});
+register({
 	name: "petit-camion",
 	src: "static/plugins/ufo/rsc/petit-camion.png",
 	css: {
