@@ -1,5 +1,4 @@
-miaou(function(gui, locals, plugins, ws){
-
+miaou(function(gui, locals, plugins, prefs, ws){
 
 	function executeLoaded(ufo){
 		var $img = $(ufo.img).appendTo(document.body);
@@ -22,6 +21,11 @@ miaou(function(gui, locals, plugins, ws){
 		start: function(){
 			if (gui.mobile) return;
 			ws.on('ufo.launch', function(ufo){
+				var funLevel = prefs.get("fun");
+				if (funLevel==="none" || funLevel==="low") {
+					console.log("prevented due to fun level setting");
+					return;
+				}
 				execute(ufo);
 			});
 		}
