@@ -63,7 +63,7 @@ register({
 	patterns: [/vache/i, /\bcows?\b/i]
 });
 register({
-	name: "cafe",
+	name: "café",
 	src: "static/plugins/ufo/rsc/cafe.png",
 	css: {
 		bottom: 0,
@@ -117,7 +117,6 @@ exports.init = function(_miaou){
 	auths = miaou.lib("auths");
 }
 
-
 function launch(roomId, args, isServerAdmin){
 	var	global = false,
 		ufo = args;
@@ -126,7 +125,7 @@ function launch(roomId, args, isServerAdmin){
 		if (global && !isServerAdmin) {
 			throw "Only a server admin can launch a global UFO";
 		}
-		ufo = kfos.get(args.match(/[\w-]+$/)[0]);
+		ufo = kfos.get(args.match(/[\wé-]+$/u)[0]);
 		if (!ufo) {
 			throw "Command not understood";
 		}

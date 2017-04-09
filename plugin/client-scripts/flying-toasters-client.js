@@ -3,7 +3,6 @@ miaou(function(gui, locals, plugins, prefs, ws){
 	function executeLoaded(ufo){
 		var $img = $(ufo.img).appendTo(document.body);
 		$img.addClass("ufo").css(ufo.css).on("animationend webkitAnimationEnd", function(){
-			console.log("remove");
 			$img.remove();
 		});
 	}
@@ -21,8 +20,7 @@ miaou(function(gui, locals, plugins, prefs, ws){
 		start: function(){
 			if (gui.mobile) return;
 			ws.on('ufo.launch', function(ufo){
-				var funLevel = prefs.get("fun");
-				if (funLevel==="none" || funLevel==="low") {
+				if (prefs.funLowerThan("normal")) {
 					console.log("prevented due to fun level setting");
 					return;
 				}
