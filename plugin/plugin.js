@@ -112,6 +112,36 @@ register({
 	},
 	patterns: [/\bcar+ot/i]
 });
+register({
+	name: "ver",
+	src: "static/plugins/ufo/rsc/ver.png",
+	css: {
+		bottom: 0,
+		transformOrigin: "100% 100%",
+		animation: "ufo-catapulte 4s linear"
+	},
+	patterns: [/\bvers?\b/i, /\bworms?\b/i]
+});
+register({
+	name: "poireau",
+	src: "static/plugins/ufo/rsc/poireau.png",
+	css: {
+		bottom: 0,
+		transformOrigin: "100% 100%",
+		animation: "ufo-catapulte 4s linear"
+	},
+	patterns: [/poireau/i, /\bleeks?\b/i]
+});
+register({
+	name: "courgette",
+	src: "static/plugins/ufo/rsc/courgette.png",
+	css: {
+		bottom: 0,
+		transformOrigin: "100% 100%",
+		animation: "ufo-catapulte 4s linear"
+	},
+	patterns: [/courgette/i, /zucchini/i]
+});
 exports.init = function(_miaou){
 	miaou = _miaou;
 	auths = miaou.lib("auths");
@@ -125,6 +155,7 @@ function launch(roomId, args, isServerAdmin){
 		if (global && !isServerAdmin) {
 			throw "Only a server admin can launch a global UFO";
 		}
+		//ufo = kfos.get(args.match(/[\p{Letter_Number}-]+$/u)[0]);
 		ufo = kfos.get(args.match(/[\wé-]+$/u)[0]);
 		if (!ufo) {
 			throw "Command not understood";
