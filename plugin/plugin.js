@@ -142,6 +142,16 @@ register({
 	},
 	patterns: [/courgette/i, /zucchini/i]
 });
+register({
+	name: "canard",
+	src: "static/plugins/ufo/rsc/canard.png",
+	css: {
+		bottom: 0,
+		transformOrigin: "100% 100%",
+		animation: "usfo-catapulte 4s linear"
+	},
+	patterns: [/coin/i, /quac/i]
+});
 exports.init = function(_miaou){
 	miaou = _miaou;
 	auths = miaou.lib("auths");
