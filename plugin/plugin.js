@@ -150,7 +150,7 @@ register({
 		transformOrigin: "100% 100%",
 		animation: "usfo-catapulte 4s linear"
 	},
-	patterns: [/coin/i, /quac/i]
+	patterns: [/coin/i, /quack/i]
 });
 exports.init = function(_miaou){
 	miaou = _miaou;
