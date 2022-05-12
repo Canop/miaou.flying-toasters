@@ -148,9 +148,9 @@ register({
 	css: {
 		bottom: 0,
 		transformOrigin: "100% 100%",
-		animation: "usfo-catapulte 4s linear"
+		animation: "ufo-catapulte 4s linear"
 	},
-	patterns: [/coin/i, /quack/i]
+	patterns: [/\bcoin\b/i, /quack/i]
 });
 exports.init = function(_miaou){
 	miaou = _miaou;
