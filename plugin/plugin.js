@@ -14,6 +14,7 @@ function register(kfo){
 		});
 	});
 }
+exports.register = register;
 
 register({
 	name: "spacebullet",
@@ -177,6 +178,7 @@ function launch(roomId, args, isServerAdmin){
 		miaou.io.sockets.in(roomId).emit("ufo.launch", ufo);
 	}
 }
+exports.launch = launch;
 
 function onCommand(ct){
 	ct.silent = true;

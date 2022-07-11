@@ -50,4 +50,20 @@
 	}
 }
 
+@keyframes ufo-spirale-to-screen {
+	from {
+		transform: scale(.01) translateX(20vw) translateY(-120vh) rotate(500deg);
+	}
+	to {
+		transform: scale(2) translateX(0vw) translateY(200px) rotate(0);
+	}
+}
 
+@keyframes ufo-top-to-bottom {
+	from {
+		transform: translateY(-150vh) rotate(-90deg);
+	}
+	to {
+		transform: translateY(240vh) rotate(-90deg);
+	}
+}
